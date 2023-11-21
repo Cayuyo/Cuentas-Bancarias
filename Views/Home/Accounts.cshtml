@@ -1,0 +1,33 @@
+
+<h1>Bienvenido @ViewBag.ThisUser.Nombre @ViewBag.ThisUser.Apellido!!</h1>
+<h4><span>Saldo actual: @ViewBag.BalanceActual</span></h4>
+
+@model Transaccion
+
+<form id="dep_wd" action="/makeTransaction" method="POST">
+    <label asp-for="Cantidad">Depositar/Retirar:</label>
+    <input asp-for="Cantidad" type="number" step="0.01" required>
+    <span asp-validation-for="Cantidad"></span>
+    <input asp-for="UsuarioId" type="hidden" value="@ViewBag.ThisUser.UsuarioId">
+    <input name="CurrBalance" type="hidden" value="@ViewBag.BalanceActual">
+    <input class="btn btn-primary" type="submit" value="Enviar">
+</form>
+<br>
+<table class="table table-striped table-bordered">
+    <thead>
+        <th class="amt">Cantidad</th>
+        <th class="dte">Fecha</th>
+    </thead>
+    <tbody>
+        @if (ViewBag.AllTransacciones != null)
+        {
+            @foreach(var t in ViewBag.AllTransacciones)
+            {
+                <tr>
+                    <td>@t.Cantidad.ToString("C2")</td>
+                    <td>@t.Fecha_Creacion.ToString()</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

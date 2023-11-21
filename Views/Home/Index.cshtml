@@ -1,0 +1,79 @@
+﻿
+@model Usuario
+
+@{
+    var existeUsuarioError = ViewData.ModelState["Correo"]?.Errors.FirstOrDefault()?.ErrorMessage;
+}
+
+@if (!string.IsNullOrEmpty(existeUsuarioError))
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @existeUsuarioError
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+
+<body>
+    <div class="center-content">
+        <h2 style="margin-top: 20px;">Tarea Cuentas Bancarias</h2>
+        <div class='content'>
+            <div class='login'>
+                <form asp-controller="Usuario" asp-action="login" method="post">
+                    <h4>INICIAR SESION!!</h4><br />
+                    <div class="form-group">
+                        <label asp-for="Correo"></label>
+                        <input asp-for="Correo" class="form-control" required />
+                        <span asp-validation-for="Correo" class="text-danger"></span></br>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Contrasena">Contraseña</label>
+                        <input asp-for="Contrasena" type="password" class="form-control" required />
+                        <span asp-validation-for="Contrasena" class="text-danger"></span></br>
+                    </div>
+
+                    <button type="submit" class="btn2 btn btn-primary">Iniciar Sesión</button>
+                </form>
+            </div>
+            <div class='register'>
+                <form asp-controller="Usuario" asp-action="registro" method="post">
+                    <h4>¿No tienes una cuenta? Registrate ahora!</h4><br />
+                    <div class="form-group">
+                        <label asp-for="Nombre"></label>
+                        <input asp-for="Nombre" class="form-control" required />
+                        <span asp-validation-for="Nombre" class="text-danger"></span></br>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Apellido"></label>
+                        <input asp-for="Apellido" class="form-control" required />
+                        <span asp-validation-for="Apellido" class="text-danger"></span></br>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Correo"></label>
+                        <input asp-for="Correo" type="email" class="form-control" required />
+                        <span asp-validation-for="Correo" class="text-danger"></span></br>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Contrasena"></label>
+                        <input asp-for="Contrasena" type="password" class="form-control" required />
+                        <span asp-validation-for="Contrasena" class="text-danger"></span></br>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Rep_Contrasena">Repetir Contraseña</label>
+                        <input asp-for="Rep_Contrasena" type="password" class="form-control" required />
+                        <span asp-validation-for="Rep_Contrasena" class="text-danger"></span></br>
+                    </div>
+
+                    <button class="btn1 btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

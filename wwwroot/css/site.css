@@ -1,0 +1,107 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Estilo para el contenedor principal */
+.wrap {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  max-width: 100%;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+/* Estilo para el título */
+.titulo {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilo para los formularios de registro e inicio de sesion */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding: 15px;
+}
+
+/*Estilo para el formulario de registro  */
+.register {
+  flex: 1;
+  padding: 10px;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+/* Estilo para el formulario de inicio de sesión */
+.login {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-left: 10px;
+  text-align: left;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  height: fit-content;
+}
+
+/* Estilo para los botones de registro y login */
+.btn1,
+.btn2 {
+  background-color: rgb(205, 58, 58);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.btn1:hover,
+.btn2:hover {
+  box-shadow: 0 4px #000000;
+}
+
+.btn1:active,
+.btn2:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.logout{
+  color: blue !important;
+  text-decoration: underline;
+}
